@@ -22,8 +22,13 @@
          <div class="main">
             <div class="container" id="report_section"></div>
          </div>
+
+		
+      </div>  
+
+	  <div id="msg" class="container" style="display: none;background-color:#831717;text-align:center;padding:10px;margin-top:7px;width: 50rem">
+          <span id="response"></span>
       </div>
-     
    </body>
 </html>
 
