@@ -14,7 +14,7 @@ Codeigniter 3 is used to develop the project
 
 2. Download zip file, extract to htdocs in xampp, and to www in wamp
 
-3. create databse named 'shorten_db'
+3. create database named 'shorten_db'
 
 4. After creating the database, import 'shorten_db.sql'
 
