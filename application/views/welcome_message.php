@@ -10,8 +10,8 @@
       <script type="text/javascript" src="<?php echo base_url()?>js/jquery.dataTables.min.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
-   <body style="font-family:Verdana;color:#aaaaaa;">
-      <div style="background-color:#e5e5e5;padding:15px;text-align:center;">
+   <body>
+      <div class="head">
          <h1>URL Shortener</h1>
       </div>
       <div style="overflow:auto">
@@ -24,7 +24,7 @@
             <div class="container" id="report_section"></div>
          </div>
       </div>
-      <div id="msg" class="container" style="display: none;background-color:#831717;text-align:center;padding:10px;margin-top:7px;width: 50rem">
+      <div id="msg" class="container res">
          <span id="response"></span>
       </div>
    </body>
