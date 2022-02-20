@@ -45,9 +45,8 @@ class Welcome extends CI_Controller
 
     public function reterive_orginal_url()
     {
-        $short_url = substr($this
-            ->input
-            ->post('short_url') , 32);
+		$extract=explode("?",$this->input->post('short_url'));
+		$short_url =$extract[1];
         $reterive_orginal_url = $this
             ->Welcome_m
             ->reterive_orginal_url($short_url);

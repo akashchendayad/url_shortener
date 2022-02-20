@@ -71,9 +71,10 @@ class Welcome_m extends CI_Model
 
     public function reterive_data()
     {
+        $base=base_url();
         $query = $this
             ->db
-            ->query("SELECT id,url,CONCAT('http://localhost/url_shortener/?',short_code) as
+            ->query("SELECT id,url,CONCAT('$base?',short_code) as
       short_code,hits,date_format(added_date,'%d-%m-%y %h:%i %p') as added_date FROM `url_shorten`");
 
         return $query;
