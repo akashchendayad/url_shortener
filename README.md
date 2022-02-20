@@ -2,7 +2,7 @@
 
 ### Screenshots
 
-![url-shortener](/url_shortener/img/scrnsht.png)
+![url-shortener](url_shortener/img/scrnsht.png)
 
 ---
 
