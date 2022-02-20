@@ -54,8 +54,10 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['item'] = "welcome/index";
-$route['get_items'] = "welcome/get_items";
+$route['get_tbldata'] = "welcome/get_tbldata";
 $route['get_sec_det']="welcome/get_sec_det";
-$route['http://localhost/url_shortener/short']="short/index";
+$route['reterive_orginal_url']="welcome/reterive_orginal_url";
+$route['generate_short_url']="welcome/generate_short_url";
+
 
 

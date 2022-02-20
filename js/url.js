@@ -12,7 +12,7 @@ function generate_short_url()
     var data = 'long_url=' + long_url;
 	$.ajax({
 		type: "POST",
-		url: "welcome/generate_short_url",
+		url: "generate_short_url",
 		data: data,
 		success: function (data) 
 		{
@@ -58,7 +58,7 @@ function reterive_orginal_url()
     var data = 'short_url=' + short_url;
 	$.ajax({
 		type: "POST",
-		url: "welcome/reterive_orginal_url",
+		url: "reterive_orginal_url",
 		data: data,
 		success: function (data) 
 		{
@@ -111,9 +111,9 @@ function changesection(id)
            if(id==3)
 		   {
 			$(document).ready(function() {
-				$('#item-list').DataTable({
+				$('#tble_urldata').DataTable({
 					"ajax": {
-						url : "get_items",
+						url : "get_tbldata",
 						type : 'GET'
 					},
 					pageLength: 5,

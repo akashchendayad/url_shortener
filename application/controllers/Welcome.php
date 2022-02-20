@@ -17,7 +17,8 @@ class Welcome extends CI_Controller {
 		    $get_redirect_url=$this->Welcome_m->get_redirect_url($params);
 			if($get_redirect_url!=0)
 			redirect($get_redirect_url,'refresh');
-			
+			else
+			$this->load->view('not_found');
 		}
 		else
 		$this->load->view('welcome_message');
@@ -86,7 +87,7 @@ class Welcome extends CI_Controller {
 			   <div class="">
 				 <h1>Report</h1>
 				 <div class="">
-				 <table id="item-list" class="display" width="100%" style="color:black" cellspacing="0">
+				 <table id="tble_urldata" class="display" width="100%" style="color:black" cellspacing="0">
 				 <thead>
 					 <tr>
 						 <th>id</th>
@@ -115,7 +116,7 @@ class Welcome extends CI_Controller {
          echo json_encode(array('report'=>$htmldata)); 
     }
 
-	public function get_items()
+	public function get_tbldata()
    {
       $draw = intval($this->input->get("draw"));
       $start = intval($this->input->get("start"));
@@ -151,9 +152,5 @@ class Welcome extends CI_Controller {
       exit();
    }
 
-   public function short()
-   {
-
-   }
  
 }
