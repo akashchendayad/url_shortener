@@ -50,5 +50,19 @@ class Welcome_m extends CI_Model
            return $token;
          
    }
+
+   public function reterive_orginal_url($short_code)
+   {
+      $query=$this->db->query( "SELECT url FROM url_shorten WHERE short_code ='$short_code'");
+      if ($query->num_rows() > 0)
+      {
+         $res = $query->row();
+         return $res->url;
+              
+      } 
+      else
+        return('Short URL not valid');
+
+   }
    
 }
