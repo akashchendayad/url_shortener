@@ -17,7 +17,7 @@
       <div style="overflow:auto">
          <div class="menu">
             <a onclick="changesection('1')">Generate Short Url</a>
-            <a onclick="changesection('2')">Reterive Orginal Url</a>
+            <a onclick="changesection('2')">Retrieve Original Url</a>
             <a onclick="changesection('3')">Report</a>
          </div>
          <div class="main">
