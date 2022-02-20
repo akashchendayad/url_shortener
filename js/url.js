@@ -16,8 +16,8 @@ function generate_short_url()
 		data: data,
 		success: function (data) 
 		{
-			$("#response").text('');
-			$("#response").text(data.response);
+			$("#response").html('');
+			$("#response").html('<a target="_blank" href='+data.response+'>'+data.response+'</a>');
 			$('#msg').css('display','block');
 
 		},
@@ -62,8 +62,8 @@ function reterive_orginal_url()
 		data: data,
 		success: function (data) 
 		{
-			$("#response").text('');
-			$("#response").text(data.response);
+			$("#response").html('');
+			$("#response").html('<a target="_blank" href='+data.response+'>'+data.response+'</a>');
 			$('#msg').css('display','block');
 
 		},
