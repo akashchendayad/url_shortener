@@ -8,7 +8,7 @@
 
 ### How to install ?
 
-Codeigniter 3 is used to develop the project
+##Codeigniter 3 is used to develop the project
 
 1. Install wamp/xampp server and configure it on your system
 
