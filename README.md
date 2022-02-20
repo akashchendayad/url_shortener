@@ -25,3 +25,5 @@
 7. Rename project folder to 'url_shortener' (you can name it whatever you want).
 
 8. By typing 'http://localhost/url_shortener/' into the address bar, the home page will load.
+
+9. The working demo of the project can be found here http://akashchendayad.c1.biz/url_shortener/
