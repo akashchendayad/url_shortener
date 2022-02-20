@@ -97,8 +97,8 @@ class Welcome extends CI_Controller
 				 <table id="tble_urldata" class="display" width="100%" style="color:black" cellspacing="0">
 				 <thead>
 					 <tr>
-						 <th>id</th>
-						 <th>url</th>
+						 <th>ID</th>
+						 <th>Url</th>
 						 <th>Short Url</th>
 						 <th>Hits</th>
 						 <th>Created Date</th>
@@ -107,7 +107,6 @@ class Welcome extends CI_Controller
 			 </table>
 			 </div>
 			   </div>
-		 
 			 </div>';
 
         }
