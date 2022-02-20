@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	
-	changesection('1')
+	changesection('1');
 	
 });
 
@@ -102,12 +102,25 @@ function changesection(id)
 	var data = 'id=' + id;
 	$.ajax({
 		type: "POST",
-		url: "welcome/get_sec_det",
+		url: "get_sec_det",
 		data: data,
 		success: function (data) 
 		{
 			$("#report_section").html('');
 			$("#report_section").html(data.report);
+           if(id==3)
+		   {
+			$(document).ready(function() {
+				$('#item-list').DataTable({
+					"ajax": {
+						url : "get_items",
+						type : 'GET'
+					},
+					pageLength: 5,
+					lengthMenu: [5, 10, 20, 30,50]
+				});
+			});
+		   }
 
 		},
 		error: function (jqXHR, exception) 

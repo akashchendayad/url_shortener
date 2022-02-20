@@ -7,7 +7,7 @@ class Welcome_m extends CI_Model
         $long_url=$this->input->post('long_url');
         $url=urldecode($long_url);
                 if (filter_var($url, FILTER_VALIDATE_URL)) 
-                   return base_url()."short/".$this->Welcome_m->GetShortUrl($url);
+                   return base_url().$this->Welcome_m->GetShortUrl($url);
                 else 
                    return ("Not a valid URL");
                 
@@ -27,7 +27,6 @@ class Welcome_m extends CI_Model
    else 
      {
             $short_code =$this->Welcome_m->generateUniqueID();
-            $sql = "INSERT INTO url_shorten (url, short_code, hits) VALUES ('".$url."', '".$short_code."', '0')";
             $query=$this->db->query("INSERT INTO url_shorten (url,short_code, hits) VALUES ('$url','$short_code','0')");
             if ($query === TRUE) 
                 return $short_code;
@@ -41,7 +40,7 @@ class Welcome_m extends CI_Model
 
    public function generateUniqueID()
    {
-        $token = substr(md5(uniqid(rand(), true)),0,6); 
+        $token = "?".substr(md5(uniqid(rand(), true)),0,6); 
         $query=$this->db->query( "SELECT * FROM url_shorten WHERE short_code ='$token'");
 
         if ($query->num_rows() > 0) 
@@ -63,6 +62,14 @@ class Welcome_m extends CI_Model
       else
         return('Short URL not valid');
 
+   }
+
+   public function reterive_data()
+   {
+     $query=$this->db->query("SELECT id,url,CONCAT('http://localhost/url_shortener/short/',short_code) as
+      short_code,hits,date_format(added_date,'%d-%m-%y %h:%i %p') as added_date FROM `url_shorten`");
+
+      return  $query;
    }
    
 }

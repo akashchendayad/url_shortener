@@ -52,3 +52,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['item'] = "welcome/index";
+$route['get_items'] = "welcome/get_items";
+$route['get_sec_det']="welcome/get_sec_det";
+$route['http://localhost/url_shortener/short']="short/index";
+
+
