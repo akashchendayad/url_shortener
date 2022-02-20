@@ -52,8 +52,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
-$route['item'] = "welcome/index";
 $route['get_tbldata'] = "welcome/get_tbldata";
 $route['get_sec_det']="welcome/get_sec_det";
 $route['reterive_orginal_url']="welcome/reterive_orginal_url";

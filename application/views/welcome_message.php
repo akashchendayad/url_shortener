@@ -8,11 +8,6 @@
       <script type="text/javascript" src="<?php echo base_url()?>js/bootstrap.min.js"></script>
       <script type="text/javascript" src="<?php echo base_url()?>js/url.js"></script>
       <script type="text/javascript" src="<?php echo base_url()?>js/jquery.dataTables.min.js"></script>
-      
-	 
-
-
-
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body style="font-family:Verdana;color:#aaaaaa;">
@@ -28,14 +23,9 @@
          <div class="main">
             <div class="container" id="report_section"></div>
          </div>
-
-		
-      </div>  
-
-	  <div id="msg" class="container" style="display: none;background-color:#831717;text-align:center;padding:10px;margin-top:7px;width: 50rem">
-          <span id="response"></span>
+      </div>
+      <div id="msg" class="container" style="display: none;background-color:#831717;text-align:center;padding:10px;margin-top:7px;width: 50rem">
+         <span id="response"></span>
       </div>
    </body>
 </html>
-
-
