@@ -22,4 +22,6 @@ Codeigniter 3 is used to develop the project
 
 6. make necessary changes application/config/config.php and application/config/database files (if applicable).
 
-7. By typing 'http://localhost/url_shortener/' into the address bar, the home page will load.
+7. Rename project folder to 'url_shortener' (you can name it whatever you want).
+
+8. By typing 'http://localhost/url_shortener/' into the address bar, the home page will load.
