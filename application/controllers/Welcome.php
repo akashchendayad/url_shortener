@@ -6,12 +6,20 @@ class Welcome extends CI_Controller {
 
 	{
 		parent::__construct();
-			$this->load->model('Welcome_m');
+		$this->load->model('Welcome_m');
 		   
 	}
 	public function index()
 	{
-        $params   = "?".$_SERVER['QUERY_STRING'];
+        $params=$_SERVER['QUERY_STRING'];
+		if($params!='')
+		{
+		    $get_redirect_url=$this->Welcome_m->get_redirect_url($params);
+			if($get_redirect_url!=0)
+			redirect($get_redirect_url,'refresh');
+			
+		}
+		else
 		$this->load->view('welcome_message');
 	}
 
@@ -27,7 +35,7 @@ class Welcome extends CI_Controller {
 
 	public function reterive_orginal_url()
 	{
-		$short_url=substr($this->input->post('short_url'),31);
+		$short_url=substr($this->input->post('short_url'),32);
 		$reterive_orginal_url=$this->Welcome_m->reterive_orginal_url($short_url);
         header('Content-Type: application/json');
 		echo json_encode(array('response'=>$reterive_orginal_url)); 

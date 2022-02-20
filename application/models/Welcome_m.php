@@ -7,7 +7,7 @@ class Welcome_m extends CI_Model
         $long_url=$this->input->post('long_url');
         $url=urldecode($long_url);
                 if (filter_var($url, FILTER_VALIDATE_URL)) 
-                   return base_url().$this->Welcome_m->GetShortUrl($url);
+                   return base_url()."?".$this->Welcome_m->GetShortUrl($url);
                 else 
                    return ("Not a valid URL");
                 
@@ -40,7 +40,7 @@ class Welcome_m extends CI_Model
 
    public function generateUniqueID()
    {
-        $token = "?".substr(md5(uniqid(rand(), true)),0,6); 
+        $token = substr(md5(uniqid(rand(), true)),0,6); 
         $query=$this->db->query( "SELECT * FROM url_shorten WHERE short_code ='$token'");
 
         if ($query->num_rows() > 0) 
@@ -66,10 +66,26 @@ class Welcome_m extends CI_Model
 
    public function reterive_data()
    {
-     $query=$this->db->query("SELECT id,url,CONCAT('http://localhost/url_shortener/short/',short_code) as
+     $query=$this->db->query("SELECT id,url,CONCAT('http://localhost/url_shortener/?',short_code) as
       short_code,hits,date_format(added_date,'%d-%m-%y %h:%i %p') as added_date FROM `url_shorten`");
 
       return  $query;
+   }
+
+   public function get_redirect_url($params)
+   {
+      $query=$this->db->query( "SELECT url,hits FROM url_shorten WHERE short_code ='$params'");
+      if ($query->num_rows() > 0)
+      {
+         $res = $query->row();
+         $hits=($res->hits)+1;
+         $query=$this->db->query("update url_shorten set hits='$hits' WHERE short_code ='$params'");
+         return $res->url;
+              
+      } 
+      else
+        return 0;
+
    }
    
 }
